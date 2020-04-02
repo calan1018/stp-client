@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - cd stp
+      - npm i npm@latest -g
+  pre_build:
+    commands:
+      - npm install
+  build:
+    commands:
+      - npm run build
+artifacts:
+  files: 
+    - 'dist/**/*'
+    - appspec.yml
+    - scripts/**
+  base-directory: './stp'
+  
+cache:
+  paths:
+    - 'node_modules/**/*'
