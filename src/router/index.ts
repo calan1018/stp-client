@@ -1,20 +1,28 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Layout from "../views/layout/Layout.vue";
-import SignUp from "../views/login/SignUp.vue";
-import Login from "../views/login/login.vue";
-import Popup from "../components/popup/phoneVerify.vue";
-import CorpSignUp from "../views/login/CorpSignUp.vue";
+
+import Popup from "../components/popup/PhoneVerify.vue";
+import DaumPostCode from "../components/popup/DaumPostCode.vue";
+
 import MyInfo from "../views/myInfo/MyInfo.vue";
 import AccountInfo from "../views/account/AccountInfo.vue";
 import InvertInfo from "../views/invest/InvestInfo.vue";
 import TransactionInfo from "../views/transaction/TransactionInfo.vue";
 import CustomerCenter from "../views/customer/CustomerCenter.vue";
 import PrototypePage from "../views/prototype/PrototypePage.vue";
-import Member from "../views/member/Privavy.vue";
+
+import Member from "../views/member/TermsOfService.vue";
 import MemberJoin from "../views/member/Join.vue";
 import MyAccount from "../views/member/MyAccount.vue";
-import DaumPostCode from "../views/member/DaumPostCode.vue";
+
+import FindMyId from "../views/login/FindMyId.vue";
+import FindMyPass from "../views/login/FindMyPass.vue";
+import Layout from "../views/layout/Layout.vue";
+import SignUp from "../views/login/SignUp.vue";
+import Login from "../views/login/Login.vue";
+import CorpSignUp from "../views/login/CorpSignUp.vue";
+
+
 
 Vue.use(Router);
 
@@ -92,9 +100,19 @@ const router = new Router({
       component: Login
     },
     {
-      path: "/member/daumPostCode",
+      path: "/components/popup",
       name: "daumPostCode",
       component: DaumPostCode
+    },
+    {
+      path: "/login/findMyId",
+      name: "findMyId",
+      component: FindMyId
+    },
+    {
+      path: "/login/findMyPass",
+      name: "findMyPass",
+      component: FindMyPass
     }
   ]
 });
